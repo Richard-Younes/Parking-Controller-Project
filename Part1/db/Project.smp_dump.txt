@@ -1,0 +1,59 @@
+
+State Machine - |Parking_Controller|state_E
+Name state_E.INCORRECT_E state_E.CORRECT_E state_E.CHECK_STATE_E state_E.ENTER_EXIT_ID 
+state_E.ENTER_EXIT_ID 0 0 0 0 
+state_E.CHECK_STATE_E 0 0 1 1 
+state_E.CORRECT_E 0 1 0 1 
+state_E.INCORRECT_E 1 0 0 1 
+
+State Machine - |Parking_Controller|flg_inp
+Name flg_inp.11 flg_inp.10 flg_inp.01 flg_inp.00 
+flg_inp.00 0 0 0 0 
+flg_inp.01 0 0 1 1 
+flg_inp.10 0 1 0 1 
+flg_inp.11 1 0 0 1 
+
+State Machine - |Parking_Controller|state
+Name state.INPUTTING state.EXIT_FSM state.ADMIN_FSM state.NORMAL_FSM state.INITIAL state.000000 
+state.000000 0 0 0 0 0 0 
+state.INITIAL 0 0 0 0 1 1 
+state.NORMAL_FSM 0 0 0 1 0 1 
+state.ADMIN_FSM 0 0 1 0 0 1 
+state.EXIT_FSM 0 1 0 0 0 1 
+state.INPUTTING 1 0 0 0 0 1 
+
+State Machine - |Parking_Controller|state_admin
+Name state_admin.ENTER_ADMIN_ID state_admin.CHECK_RESTRICT_INCORRECT state_admin.CHECK_RESTRICT_CORRECT state_admin.CHECK_RESTRICT state_admin.RESTRICT_ADMIN state_admin.OPEN_GATE_ADMIN state_admin.CHOOSE_MODE_ADMIN state_admin.INCORRECT_ADMIN state_admin.CORRECT_ADMIN state_admin.CHECK_ADMIN 
+state_admin.CHECK_ADMIN 0 0 0 0 0 0 0 0 0 0 
+state_admin.CORRECT_ADMIN 0 0 0 0 0 0 0 0 1 1 
+state_admin.INCORRECT_ADMIN 0 0 0 0 0 0 0 1 0 1 
+state_admin.CHOOSE_MODE_ADMIN 0 0 0 0 0 0 1 0 0 1 
+state_admin.OPEN_GATE_ADMIN 0 0 0 0 0 1 0 0 0 1 
+state_admin.RESTRICT_ADMIN 0 0 0 0 1 0 0 0 0 1 
+state_admin.CHECK_RESTRICT 0 0 0 1 0 0 0 0 0 1 
+state_admin.CHECK_RESTRICT_CORRECT 0 0 1 0 0 0 0 0 0 1 
+state_admin.CHECK_RESTRICT_INCORRECT 0 1 0 0 0 0 0 0 0 1 
+state_admin.ENTER_ADMIN_ID 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |Parking_Controller|state_N
+Name state_N.NO_SPACE_N state_N.GRANTED_CHOSN_FLR_N state_N.GRANTED_ALT_FLR_N state_N.INCORRECT_N state_N.CHECK_FLR_N state_N.CHECK_STATE_N 
+state_N.CHECK_STATE_N 0 0 0 0 0 0 
+state_N.CHECK_FLR_N 0 0 0 0 1 1 
+state_N.INCORRECT_N 0 0 0 1 0 1 
+state_N.GRANTED_ALT_FLR_N 0 0 1 0 0 1 
+state_N.GRANTED_CHOSN_FLR_N 0 1 0 0 0 1 
+state_N.NO_SPACE_N 1 0 0 0 0 1 
+
+State Machine - |Parking_Controller|MAIN_LCD:lcd_inst|LCD:inst2|mLCD_ST
+Name mLCD_ST.000011 mLCD_ST.000010 mLCD_ST.000001 mLCD_ST.000000 
+mLCD_ST.000000 0 0 0 0 
+mLCD_ST.000001 0 0 1 1 
+mLCD_ST.000010 0 1 0 1 
+mLCD_ST.000011 1 0 0 1 
+
+State Machine - |Parking_Controller|MAIN_LCD:lcd_inst|LCD:inst2|LCD_Controller:u0|ST
+Name ST.11 ST.10 ST.01 ST.00 
+ST.00 0 0 0 0 
+ST.01 0 0 1 1 
+ST.10 0 1 0 1 
+ST.11 1 0 0 1 

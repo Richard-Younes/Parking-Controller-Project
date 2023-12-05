@@ -1,0 +1,115 @@
+module Parking_Controller(
+    input flr, power, clk,
+
+    // inout PS2_DAT,
+    // input PS2_CLK,
+    
+    input [7:0] key1_code, // to remove
+    input key1_on, // 
+
+    output reg [6:0] first_rem_BCD, second_rem_BCD, tot_rem_BCD_left, tot_rem_BCD_right,
+    output red_power_led, red_wrong_led, green_led
+);
+
+reg reset;
+reg [5:0] state; 
+wire [27:0] ID;
+wire buffer_full, esc_pressed, ctrla_pressed;
+
+reg [5:0] t;
+wire key_pressed;
+wire [3:0] key;
+reg [1:0] flg_inp = 0;
+
+
+parameter OFF = 0;
+parameter INITIAL = 1;
+parameter NORMAL_FSM = 2;
+parameter ADMIN_FSM = 3;
+parameter EXIT_FSM = 4;
+parameter INPUTTING = 5;
+
+initial begin
+    state = 0;
+    reset = 0;
+    t = 0;
+end
+
+ps2_Main keyb(
+    .CLK    (clk),
+    .reset   (reset),
+    .PS2_CLK    (32'd0),   //
+    .PS2_DAT    (32'd0),  //
+    .key1_code  (key1_code),
+    .key1_on    (key1_on),
+    .key_pressed    (key_pressed),
+    .buffer_full    (buffer_full),
+    .ID   (ID),
+    .key (key),
+    .esc_pressed (esc_pressed),
+    .ctrla_pressed (ctrla_pressed)
+);
+
+always @ (posedge clk) begin
+    t <= t + 1;
+    reset <= 1;
+    case(state)
+        OFF: begin
+            if (power) begin
+                state <= INITIAL;
+            end else state <= OFF;
+        end
+        INITIAL: begin
+            t <= 1;
+            flg_inp = 0;
+            reset <= 0;
+            if (esc_pressed) begin // exit
+                state <= EXIT_FSM;
+            end else if (ctrla_pressed) begin // ctrl a
+                state <= ADMIN_FSM;
+            end else if (key_pressed && !ctrla_pressed && !esc_pressed) begin 
+                state <= INPUTTING;
+            end else state <= INITIAL;
+        end
+        INPUTTING: begin
+            reset <= 0;
+            if (!buffer_full && !key_pressed && t < 5) begin
+                state <= INPUTTING;
+            end else if (!buffer_full && key_pressed) begin
+                state <= INPUTTING;
+                t <= 1;
+            end else if (buffer_full && flg_inp == 0) begin
+                state <= NORMAL_FSM;
+            end else if (buffer_full && flg_inp == 1) begin
+                state <= ADMIN_FSM;
+            end else if (buffer_full && flg_inp == 2) begin
+                state <= EXIT_FSM;
+            end else if (t >= 5) begin
+                state <= INITIAL;
+                reset <= 1;
+            end 
+        end
+        NORMAL_FSM: begin
+            reset <= 0;
+        end
+        ADMIN_FSM: begin
+            
+        end
+        EXIT_FSM: begin 
+            reset <= 0;
+
+        end
+        default: begin
+            
+        end
+    endcase
+    if (!power) begin
+        state <= OFF;
+    end
+end
+
+
+
+
+
+endmodule

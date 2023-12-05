@@ -1,0 +1,209 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "red_power_led",
+					"strict" : false
+				},
+				{
+					"name" : "red_wrong_led",
+					"strict" : false
+				},
+				{
+					"name" : "green_led",
+					"strict" : false
+				},
+				{
+					"name" : "buffer_full",
+					"strict" : false
+				},
+				{
+					"name" : "esc_pressed",
+					"strict" : false
+				},
+				{
+					"name" : "ctrla_pressed",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_EN",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_RS",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LCD_DATA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "BCD3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_DAT",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "power",
+					"strict" : false
+				},
+				{
+					"name" : "flr",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "PS2_CLK",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

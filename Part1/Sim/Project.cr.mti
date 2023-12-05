@@ -1,0 +1,71 @@
+{C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Parking_Controller_tb
+
+Top level modules:
+	Parking_Controller_tb
+
+} {} {}} {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/LCD_CDivider.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/LCD_CDivider.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module LCD_CDivider
+
+Top level modules:
+	LCD_CDivider
+
+} {} {}} {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/ps2_keyboard.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/ps2_keyboard.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ps2_keyboard
+
+Top level modules:
+	ps2_keyboard
+
+} {} {}} {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/ps2_Main.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/ps2_Main.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ps2_Main
+
+Top level modules:
+	ps2_Main
+
+} {} {}} {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/LCD_Controller.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/LCD_Controller.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module LCD_Controller
+
+Top level modules:
+	LCD_Controller
+
+} {} {}} {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/ps2_clock_divider.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/ps2_clock_divider.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ps2_clock_divider
+
+Top level modules:
+	ps2_clock_divider
+
+} {} {}} {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module floor_id_logic
+
+Top level modules:
+	floor_id_logic
+
+} {} {}} {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Parking_Controller
+
+Top level modules:
+	Parking_Controller
+
+} {} {}} {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/LCD.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/LCD.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module LCD
+
+Top level modules:
+	LCD
+
+} {} {}} {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/MAIN_LCD.v} {1 {vlog -work work -stats=none {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/MAIN_LCD.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module MAIN_LCD
+
+Top level modules:
+	MAIN_LCD
+
+} {} {}}

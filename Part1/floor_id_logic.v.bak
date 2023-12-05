@@ -1,0 +1,135 @@
+module floor_id_logic(
+    input [27:0] ID,
+    input chosen_flr, CLK, action_taken, // MODE==> 0: Enter, 1: Exit // action_taken==> 0: Nothing, 1: Go Alternative Floor, 2: Go Chosen Floor
+    input [1:0] MODE,
+    output wire id_valid, id_special, special_flr_chosen, chosen_flr_full, alternative_flr_full, adminId_valid,
+    output reg [2:0] remain_flr_spec_0, remain_flr_norm_0, remain_flr_1
+);
+
+reg [95:0] users = {8'h10, 8'h11, 8'h12, 8'h13, 8'h14, 8'h15, 8'h16, 8'h17, 8'h18, 8'h19, 8'h20, 8'h21};
+reg [11:0] users_status = 12'd0;
+reg [15:0] special_users = {8'h00, 8'h01};
+reg [1:0] special_users_status = 2'd0;
+reg [15:0] admin_users = {8'h05, 8'h06};
+
+// reg [23:0] inside_users_0 = {8'hAA, 8'hAA, 8'hAA};
+// reg [39:0] inside_users_1 = {8'hAA, 8'hAA, 8'hAA, 8'hAA, 8'hAA};
+// reg [15:0] inside_special_users = {8'hAA, 8'hAA};
+
+wire [1:0] action_taken;
+
+parameter ID_PREFIX = 20'h20230;
+
+assign id_valid = (((
+({1, ID} == {users[11], ID_PREFIX, users[95:88]}) || ({1, ID} == {users[10], ID_PREFIX, users[87:80]}) || ({1, ID} == {users[9], ID_PREFIX, users[79:72]}) ||
+({1, ID} == {users[8], ID_PREFIX, users[71:64]}) || ({1, ID} == {users[7], ID_PREFIX, users[63:56]}) || ({1, ID} == {users[6], ID_PREFIX, users[55:48]}) ||
+({1, ID} == {users[5], ID_PREFIX, users[47:40]}) || ({1, ID} == {users[4], ID_PREFIX, users[39:32]}) || ({1, ID} == {users[3], ID_PREFIX, users[31:24]}) ||
+({1, ID} == {users[2], ID_PREFIX, users[23:16]}) || ({1, ID} == {users[1], ID_PREFIX, users[15:8]})  || ({1, ID} == {users[0], ID_PREFIX, users[7:0]}))
+&& (MODE == 1) )
+||
+((
+({0, ID} == {users[11], ID_PREFIX, users[95:88]}) || ({0, ID} == {users[10], ID_PREFIX, users[87:80]}) || ({0, ID} == {users[9], ID_PREFIX, users[79:72]}) ||
+({0, ID} == {users[8], ID_PREFIX, users[71:64]}) || ({0, ID} == {users[7], ID_PREFIX, users[63:56]}) || ({0, ID} == {users[6], ID_PREFIX, users[55:48]}) ||
+({0, ID} == {users[5], ID_PREFIX, users[47:40]}) || ({0, ID} == {users[4], ID_PREFIX, users[39:32]}) || ({0, ID} == {users[3], ID_PREFIX, users[31:24]}) ||
+({0, ID} == {users[2], ID_PREFIX, users[23:16]}) || ({0, ID} == {users[1], ID_PREFIX, users[15:8]})  || ({0, ID} == {users[0], ID_PREFIX, users[7:0]}))
+&& (!MODE) )
+) ? 1 : 0;
+
+assign id_special = ((ID == {ID_PREFIX, outside_special_users[15:8]}) || (ID == {ID_PREFIX, outside_special_users[7:0]})) ? 1 : 0;
+
+assign adminId_valid = ((ID == {ID_PREFIX, admin_users[15:8]}) || (ID == {ID_PREFIX, admin_users[7:0]})) ? 1 : 0;
+
+assign special_flr_chosen <= (flr == 0) ? 1 : 0;
+
+assign chosen_flr_full = (((!chosen_flr) && (remain_flr_norm_0 == 0)) || ((chosen_flr) && (remain_flr_1 == 0))) ? 1 : 0;
+assign alternative_flr_full = (((!chosen_flr) && (remain_flr_1 == 0)) || ((chosen_flr) && (remain_flr_norm_0 == 0))) ? 1 : 0;
+
+reg [2:0] index = 0;
+
+wire [7:0] id_postfix;
+
+assign id_postfix = ID[7:0];
+
+reg [7:0] popped_id = 8'hAA;
+
+always @ (posedge CLK) begin
+    if (MODE == 0) begin // Enter Mode
+        if (id_valid) begin
+            case(id_postfix)
+            8'h10: begin
+                popped_id <= outside_users[95:88];
+                outside_users[95:88] <= 8'hAA;
+            end 
+            8'h11: begin
+                popped_id <= outside_users[87:80];
+                outside_users[87:80] <= 8'hAA;
+            end
+            8'h12: begin
+                popped_id <= outside_users[79:72];
+                outside_users[79:72] <= 8'hAA;
+            end
+            8'h13: begin
+                popped_id <= outside_users[71:64];
+                outside_users[71:64] <= 8'hAA;
+            end
+            8'h14: begin
+                popped_id <= outside_users[63:56];
+                outside_users[63:56] <= 8'hAA;
+            end
+            8'h15: begin
+                popped_id <= outside_users[55:48];
+                outside_users[55:48] <= 8'hAA;
+            end
+            8'h16: begin
+                popped_id <= outside_users[47:40];
+                outside_users[47:40] <= 8'hAA;
+            end
+            8'h17: begin
+                popped_id <= outside_users[39:32];
+                outside_users[39:32] <= 8'hAA;
+            end
+            8'h18: begin
+                popped_id <= outside_users[31:24];
+                outside_users[31:24] <= 8'hAA;
+            end
+            8'h19: begin
+                popped_id <= outside_users[23:16];
+                outside_users[23:16] <= 8'hAA;
+            end
+            8'h20: begin
+                popped_id <= outside_users[15:8];
+                outside_users[15:8] <= 8'hAA;
+            end
+            8'h21: begin
+                popped_id <= outside_users[7:0];
+                outside_users[7:0] <= 8'hAA;
+            end
+            default: begin
+                
+            end
+            endcase
+            if (action_taken == 1) begin //Alt
+                case(chosen_flr)
+                0: begin
+                    
+                end
+                1: begin
+                    
+                end
+                endcase
+            end else if (action_taken == 2) begin //Chosn
+                
+            end
+        end else if (id_special && !special_flr_chosen) begin
+            
+        end
+    end else if (MODE == 1) begin // Exit Mode
+        
+    end else if (MODE == 2) begin // Restrict Mode
+        
+    end
+end
+
+
+
+endmodule

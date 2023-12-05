@@ -1,0 +1,105 @@
+module ps2_Main(
+    input CLK, reset, 
+    input PS2_CLK, PS2_DAT,
+    
+    input [7:0] key1_code,
+    input key1_on,
+
+    output reg key_pressed, buffer_full, 
+    output reg [27:0] ID,
+    // output reg MODE,
+    output reg [3:0] key,
+    output reg ctrla_pressed, esc_pressed, ctrl_pressed 
+);
+
+wire clk_ps2, key2_on;
+reg MODE;
+wire [7:0] scandata, key2_code;
+reg [2:0] digits_counter;
+reg a_pressed;
+// reg [3:0] key;
+
+initial begin
+    ID = 28'hAAAAAAA;
+    MODE = 0;
+    digits_counter = 0;
+    key = 10;
+end
+
+ps2_clock_divider inst2(
+    .clock_in (CLK),
+    .reset (32'd0),
+    .clock_out (clk_ps2)
+);
+
+// ps2_keyboard inst1(
+//     .iCLK_50 (CLK),
+//     .ps2_dat (PS2_DAT),
+//     .ps2_clk (PS2_CLK),
+//     .sys_clk (clk_ps2),
+//     .reset (1),
+//     .reset1 (1),
+//     .scandata (scandata),
+//     .key1_on (key1_on),
+//     .key2_on (key2_on),
+//     .key1_code (key1_code),
+//     .key2_code (key2_code)
+// );
+reg key1OnReg = 0;
+
+always @ (negedge CLK or posedge reset) begin
+    key1OnReg <= key1_on;
+    key_pressed <= ((key1_on & !key1OnReg)) ? 1 : 0;
+    buffer_full <= (digits_counter == 7) ? 1 : 0;
+    if (reset) begin
+        digits_counter <= 1;
+        ID <= 28'hAAAAAAA;
+        key <= 10;
+        ctrla_pressed <= 0;
+        esc_pressed <= 0;
+        ctrl_pressed <= 0;
+        a_pressed <= 0;
+    end else if ((key1_on & !key1OnReg)) begin
+        if (digits_counter < 7 && key < 10 && !reset) digits_counter <= digits_counter + 1;
+        esc_pressed <= 0;
+        case(key1_code)
+            8'h45, 8'h70: key <= 0;
+            8'h16, 8'h69: key <= 1;
+            8'h1E, 8'h72: key <= 2;
+            8'h26, 8'h7A: key <= 3;
+            8'h25, 8'h6B: key <= 4;
+            8'h2E, 8'h73: key <= 5;
+            8'h36, 8'h74: key <= 6;
+            8'h3D, 8'h6C: key <= 7;
+            8'h3E, 8'h75: key <= 8;
+            8'h46, 8'h7D: key <= 9;
+            8'h14, 16'hE014: ctrl_pressed <= 1; // if this on, check key2_code if A is pressed
+            8'h76: esc_pressed <= 1;
+            8'h76: a_pressed <= 1;
+            default: begin
+            end
+        endcase
+    end
+
+        if (ctrl_pressed) begin
+            case(key2_code)
+                8'h76: ctrla_pressed <= 1;
+            endcase
+        end
+        if (key < 10) begin
+        case(digits_counter)
+            3'd7: ID[3:0] <= key;
+            3'd6: ID[7:4] <= key;
+            3'd5: ID[11:8] <= key;
+            3'd4: ID[15:12] <= key;
+            3'd3: ID[19:16] <= key;
+            3'd2: ID[23:20] <= key;
+            3'd1: begin
+                ID[23:20] <= 24'hAAAAAA;
+                ID[27:24] <= key;
+            end
+        endcase
+        end
+end
+
+endmodule

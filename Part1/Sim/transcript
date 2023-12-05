@@ -1,0 +1,365 @@
+# Reading pref.tcl
+# OpenFile {C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Project.mpf}
+# Loading project Project
+# Compile of Parking_Controller.v failed with 1 errors.
+# Compile of floor_id_logic.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v failed with 2 errors.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 1 failed with 2 errors.
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -gui work.Parking_Controller_tb
+# vsim -gui work.Parking_Controller_tb 
+# Start time: 19:21:44 on Nov 25,2023
+# Loading work.Parking_Controller_tb
+# Loading work.Parking_Controller
+# Loading work.floor_id_logic
+# ** Error: (vsim-3033) Instantiation of 'BDC_7SEG' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 116
+#         Searched libraries:
+#             C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/work
+# Error loading design
+# End time: 19:21:45 on Nov 25,2023, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 6
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+vsim -gui work.Parking_Controller_tb
+# vsim -gui work.Parking_Controller_tb 
+# Start time: 19:22:21 on Nov 25,2023
+# Loading work.Parking_Controller_tb
+# Loading work.Parking_Controller
+# Loading work.floor_id_logic
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'MODE'. The port definition is at: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut/logic_inst File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 99
+add wave -position insertpoint sim:/Parking_Controller_tb/*
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+add wave -position insertpoint  \
+sim:/Parking_Controller_tb/uut/logic_inst/id_valid
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'MODE'. The port definition is at: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut/logic_inst File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 99
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+add wave -position insertpoint  \
+sim:/Parking_Controller_tb/uut/logic_inst/MODE
+add wave -position insertpoint  \
+sim:/Parking_Controller_tb/uut/logic_inst/users
+add wave -position insertpoint  \
+sim:/Parking_Controller_tb/uut/logic_inst/users_flr
+add wave -position insertpoint  \
+sim:/Parking_Controller_tb/uut/logic_inst/users_status
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (2) does not match connection size (1) for port 'MODE'. The port definition is at: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut/logic_inst File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 99
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Parking_Controller_tb
+# Loading work.Parking_Controller
+# Loading work.floor_id_logic
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+add wave -position insertpoint  \
+sim:/Parking_Controller_tb/uut/logic_inst/id_postfix
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+add wave -position insertpoint  \
+sim:/Parking_Controller_tb/uut/logic_inst/action_taken
+add wave -position insertpoint  \
+sim:/Parking_Controller_tb/uut/state_N
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Parking_Controller_tb
+# Loading work.Parking_Controller
+# Loading work.floor_id_logic
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Parking_Controller_tb
+# Loading work.Parking_Controller
+# Loading work.floor_id_logic
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (2) for port 'action_taken'. The port definition is at: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut/logic_inst File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 100
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (2) for port 'action_taken'. The port definition is at: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut/logic_inst File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 100
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Parking_Controller_tb
+# Loading work.Parking_Controller
+# Loading work.floor_id_logic
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (2) for port 'action_taken'. The port definition is at: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut/logic_inst File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 100
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Parking_Controller_tb
+# Loading work.Parking_Controller
+# Loading work.floor_id_logic
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (2) for port 'action_taken'. The port definition is at: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut/logic_inst File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 100
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Parking_Controller_tb
+# Loading work.Parking_Controller
+# Loading work.floor_id_logic
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (2) for port 'action_taken'. The port definition is at: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut/logic_inst File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 100
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+add wave -position insertpoint  \
+sim:/Parking_Controller_tb/uut/take_action
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (2) for port 'action_taken'. The port definition is at: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/floor_id_logic.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut/logic_inst File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/Parking_Controller.v Line: 100
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+# Compile of LCD.v was successful.
+# Compile of LCD_CDivider.v was successful.
+# Compile of LCD_Controller.v was successful.
+# Compile of MAIN_LCD.v was successful.
+# Compile of Parking_Controller.v was successful.
+# Compile of ps2_clock_divider.v was successful.
+# Compile of ps2_keyboard.v was successful.
+# Compile of ps2_Main.v was successful.
+# Compile of TESTBENCH.v was successful.
+# Compile of floor_id_logic.v was successful.
+# 10 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.Parking_Controller_tb
+# Loading work.Parking_Controller
+# Loading work.floor_id_logic
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'uut'.  Expected 14, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /Parking_Controller_tb/uut File: C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v Line: 19
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'buffer_full'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'esc_pressed'.
+# ** Warning: (vsim-3722) C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(19): [TFMPC] - Missing connection for port 'ctrla_pressed'.
+run -all
+# ** Note: $stop    : C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v(96)
+#    Time: 1250 ps  Iteration: 0  Instance: /Parking_Controller_tb
+# Break in Module Parking_Controller_tb at C:/Users/user/Desktop/Digital Project/Digital-Lab/Part1/Sim/TESTBENCH.v line 96
+# End time: 21:46:19 on Nov 25,2023, Elapsed time: 2:23:58
+# Errors: 0, Warnings: 5

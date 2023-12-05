@@ -1,0 +1,73 @@
+module MAIN_LCD(
+    iCLK, LCD_State, ID,
+    LCD_DATA,LCD_RW,LCD_EN,LCD_RS
+);
+
+input			iCLK;
+input   [3:0]   LCD_State;
+input   [27:0]  ID;
+output	[7:0]	LCD_DATA;
+output			LCD_RW,LCD_EN,LCD_RS;
+wire clk;
+
+reg [127:0] line1, line2;
+wire [55:0] ID_string;
+
+assign ID_string = {ID[27:24] + 8'h30, ID[23:20] + 8'h30, ID[19:16] + 8'h30, ID[15:12] + 8'h30, ID[11:8] + 8'h30, ID[7:4] + 8'h30, ID[3:0] + 8'h30}
+
+always @ (posedge iCLK) begin
+    case(LCD_State)
+        4'd0: begin
+				line1 <= "   Enter Your   "; 
+				line2 <= "   ID to Park   ";
+			end
+        4'd1: begin
+				line1 <= " ACCESS GRANTED ";
+				line2 <= {"   ID: ", ID_string, "  "};
+			end
+			
+        4'd2: begin 
+				line1 <= " ACCESS DENIED  ";
+				line2 <= "   Try Again    ";
+			end
+        4'd3: begin 
+				line1 <= "   Enter Your   "; 
+				line2 <= "   ID to Exit   ";
+			end
+        4'd4: begin 
+				line1 <= "No Spaces       "; 
+				line2 <= "Left            ";
+			end
+        4'd5: begin 
+				line1 <= "Administrator   "; 
+				line2 <= "Mode            ";
+			end
+        4'd15: begin 
+				line1 <= "    Parking     "; 
+				line2 <= "       OFF      ";
+			end
+        default: begin
+				line1 <= "        X       ";
+				line2 <= "                ";
+			end
+    endcase
+end
+
+LCD_CDivider inst1 (
+    .clock_in (iCLK),
+    .reset (0),
+    .clock_out (clk)
+);
+
+LCD inst2(
+    .iCLK (iCLK),
+    .iRST_N (clk),
+    .line1 (line1),
+    .line2 (line2),
+    .LCD_DATA (LCD_DATA),
+    .LCD_RW (LCD_RW),
+    .LCD_EN (LCD_EN),
+    .LCD_RS (LCD_RS)
+);
+
+endmodule

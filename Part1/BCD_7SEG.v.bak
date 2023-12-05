@@ -1,0 +1,52 @@
+module BDC_7SEG(
+    input [2:0] remain_flr_spec_0, remain_flr_norm_0, remain_flr_1,
+    input CLK,
+    output reg [7:0] BCD0, BCD1, BCD2, BCD3
+);
+
+initial begin
+    BCD0 = 7'b0111111;
+    BCD1 = 7'b0111111;
+    BCD2 = 7'b0111111;
+    BCD3 = 7'b0111111;
+end
+
+assign [3:0] total_rem = remain_flr_norm_0 + remain_flr_spec_0 + remain_flr_1;
+
+always @ (posedge CLK) begin
+        case(remain_flr_spec_0 + remain_flr_norm_0)
+            4'b0000: BCD0 = 7'b1000000;
+            4'b0001: BCD0 = 7'b1111001;
+            4'b0010: BCD0 = 7'b0100100;
+            4'b0011: BCD0 = 7'b0110000;
+            4'b0100: BCD0 = 7'b0011001;
+            4'b0101: BCD0 = 7'b0010010;
+        endcase
+        case(remain_flr_1)
+            4'b0000: BCD1 = 7'b1000000;
+            4'b0001: BCD1 = 7'b1111001;
+            4'b0010: BCD1 = 7'b0100100;
+            4'b0011: BCD1 = 7'b0110000;
+            4'b0100: BCD1 = 7'b0011001;
+            4'b0101: BCD1 = 7'b0010010;
+        endcase
+        case(total_rem)
+            4'b0000: BCD2 = 7'b1000000;
+            4'b0001: BCD2 = 7'b1111001;
+            4'b0010: BCD2 = 7'b0100100;
+            4'b0011: BCD2 = 7'b0110000;
+            4'b0100: BCD2 = 7'b0011001;
+            4'b0101: BCD2 = 7'b0010010;
+            4'b0110: BCD2 = 7'b0000010;
+            4'b0111: BCD2 = 7'b1111000;
+            4'b1000: BCD2 = 7'b0000000;
+            4'b1001: BCD2 = 7'b0011000;
+            4'b1010: BCD2 = 7'b1000000;
+        endcase
+        case(total_rem)
+            4'b1010: BCD3 = 7'b1111001;
+            default: BCD3 = 7'b1000000;
+        endcase
+end
+
+endmodule
